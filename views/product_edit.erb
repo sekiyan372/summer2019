@@ -1,0 +1,35 @@
+<header>
+
+  <h1>SHARERARE</h1>
+
+  <ul>
+    <li><a href="/">ホーム</li>
+    <li><a href="/upload">投稿</a></li> 
+  </ul>
+
+  <form action="/log_out" method="POST">
+    <div class="log_out">
+      <input type="submit" class="btn btn btn-info" value="ログアウト">
+    </div>
+  </form>
+
+</header>
+
+<main>
+  <h2><%= @product.title %>を編集</h2>
+
+  <form action="/<%= @product.id %>" method="POST">
+    <div class="form-group">
+      <label>タイトル</label>
+      <input type="text" name="title" value="<%= @product.title %>" class="form-control" placeholder="タイトル" />
+    </div>
+
+    <div class="form-group">
+      <label>内容</label>
+      <textarea name="desc" rows="7" class="form-control" placeholder="キャプション"><%= @product.desc %></textarea>
+    </div>
+
+    <input type="hidden" name="_method" value="PUT">
+    <input type="submit" value="編集" />
+  </form>
+</main>

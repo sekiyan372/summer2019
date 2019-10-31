@@ -1,0 +1,39 @@
+<header>
+  <h1>SHARERARE</h1>
+
+  <ul>
+    <li><a href="/">ホーム</li>
+    <li><a href="/upload">投稿</a></li> 
+  </ul>
+
+  <form action="/log_out" method="POST">
+    <div class="log_out">
+      <input type="submit" class="btn btn btn-info" value="ログアウト">
+    </div>
+  </form>
+
+</header>
+
+<main>
+  <h2>投稿</h2>
+
+  <form action="/products" method="POST" enctype="multipart/form-data">
+    
+    <div class="form-group">
+        <input type="file" name="image" class="form-control">
+    </div>
+
+    <div class="form-group">
+      <input type="text" name="title" class="form-control" placeholder="タイトル"/>
+    </div>
+
+    <div class="form-group">
+      <textarea name="desc" rows="7" class="form-control" placeholder="キャプション"></textarea>
+    </div>
+
+    <div class="button-panel">
+      <input class="button" type="submit" value="投稿" />
+    </div>
+    
+  </form>
+</main>

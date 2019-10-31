@@ -1,0 +1,15 @@
+<h2>ユーザーページ</h2>
+
+<div>
+  <label>ユーザーネーム</label>
+  <p><%= @user.name %></p>
+</div>
+
+<div>
+  <label>自己紹介</label>
+  <p><%= @user.bio %></p>
+</div>
+
+<form action="/<%= user.id %>/user_edit" method="POST">
+  <input type="submit" value="編集" />
+</form>

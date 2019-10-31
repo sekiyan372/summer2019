@@ -1,0 +1,46 @@
+<header>
+
+  <h1>SHARERARE</h1>
+
+  <ul>
+    <li><a href="/">ホーム</li>
+    <li><a href="/upload">投稿</a></li> 
+
+    <form action="/log_out" method="POST">
+      <div class="log_out">
+        <input type="submit" class="btn btn btn-info" value="ログアウト">
+      </div>
+    </form>
+    
+  </ul>
+
+</header>
+
+<main>
+
+  <h2>投稿一覧</h2>
+
+  <div class="box">
+    <table class="table table-bordered">
+      <% @products.each do |product| %>
+        <td>
+          <ul>
+            <li>
+              <div><img src="<%= product.image %>" width="300"></div>
+              <div><%= product.title %></div>
+              <div><%= product.desc %></div>
+
+              <div><a href="/<%= product.id %>/product_edit">編集</a></div>
+
+              <form action="/<%= product.id %>" method="POST" style="display: inline;">
+                <input type="hidden" name="_method" value="DELETE">
+                <input type="submit" value="削除">
+              </form>
+            </li>
+          </ul>
+        </td>
+      <% end %>
+    <table>
+  </div>
+
+</main>

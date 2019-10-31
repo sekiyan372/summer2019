@@ -1,0 +1,27 @@
+<h2><%= @user.name %>のプロフィールを編集</h2>
+
+<form action="/<%= user.id %>" method="POST">
+  <div>
+    <label>ユーザーネーム</label>
+    <input type="text" name="name" />
+  </div>
+
+  <div>
+    <label>自己紹介</label>
+    <textarea name="bio"></textarea>
+  </div>
+
+  <div>
+    <label>メールアドレス</label>
+    <input type="text" name="email" />
+  </div>
+
+  <div>
+    <label>パスワード</label>
+    <input type="text" name="password" />
+  </div>
+
+  <div>
+    <input type="submit" value="登録" />
+  </div>
+</form>
